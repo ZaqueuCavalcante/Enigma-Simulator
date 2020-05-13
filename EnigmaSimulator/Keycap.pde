@@ -5,11 +5,11 @@ class Keycap {
   boolean pressed;
 
   Keycap() {
-    position = new PVector();
     drop();
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
   void setPosition(float x_, float y_) {
+    position = new PVector();
     position.x = x_;
     position.y = y_;
   }
@@ -25,6 +25,8 @@ class Keycap {
     pressed = false;
   }
   boolean isPressed() {
+    print("PRESSED !");
+    print("\n");
     return pressed;
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
