@@ -48,6 +48,7 @@ void mousePressed() {
 
 
 void keyPressed() {
+  
   //if (letterOrderLowerCase.indexOf(key) != -1 && !keyIsDown && !enigma.showPlugs) {
   //  char output = enigma.runMachine(key);
   //  if(output == '1'){
