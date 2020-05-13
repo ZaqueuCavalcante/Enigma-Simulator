@@ -9,16 +9,16 @@ class Key {
     drop();
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
-  void setPosition(float x_, float y_) {
+  void setPosition(float x, float y) {
     position = new PVector();
-    position.x = x_;
-    position.y = y_;
+    position.x = x;
+    position.y = y;
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
   void setCircle() {
     circle = new Circle();
     circle.setPosition(position.x, position.y);
-    circle.setRadius(80.0);
+    circle.setRadius(50.0);
     circle.setBorderThickness(5.0);
     circle.setInsideColor(color(50));
     circle.setBorderColor(color(255));
@@ -29,7 +29,7 @@ class Key {
     letter.setPosition(position.x, position.y);
     letter.setFont("MS PGothic");
     letter.setSymbol(symbol);
-    letter.setSize(60.0);
+    letter.setSize(30.0);
     letter.setColor(color(255));
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
@@ -40,8 +40,6 @@ class Key {
     pressed = false;
   }
   boolean isPressed() {
-    print("PRESSED !");
-    print("\n");
     return pressed;
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //

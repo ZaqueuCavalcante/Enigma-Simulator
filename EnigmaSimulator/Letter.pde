@@ -9,10 +9,10 @@ class Letter {
   Letter() {
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
-  void setPosition(float x_, float y_) {
+  void setPosition(float x, float y) {
     position = new PVector();
-    position.x = x_;
-    position.y = y_;
+    position.x = x;
+    position.y = y;
   }
   void setFont(String fontName) {
     font = createFont(fontName, 42.0);

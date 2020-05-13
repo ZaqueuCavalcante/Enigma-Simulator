@@ -1,25 +1,27 @@
-//Light[] letters = new Light[26];
+//Light[] letters = new Light[26]; //<>// //<>// //<>// //<>// //<>//
 //String letterOrderLowerCase = "qwertyuiopasdfghjklzxcvbnm";
 //PImage lightOnSprite;
 //boolean keyIsDown = false;
 //char keyDown;
 //char keyLight;
-//PImage blackground;
-//Enigma enigma;
+
+PImage background;
 
 Keyboard keyboard;
 
 void setup() {
-  size(1600, 800);
+  size(1600, 1000);
+  background = loadImage("blackTexture.jpg");
 
   keyboard = new Keyboard();
-  keyboard.setPosition(100.0, 200.0);
-  keyboard.setDistanceBetweenKeys(150.0, 100.0);
-  keyboard.setLetters();
-  keyboard.setKeycapsPositions();
-  keyboard.setKeycapsLetters();
+  keyboard.setDistanceBetweenKeys(120.0);
+  keyboard.setLettersList("QWERTZUIOASDFGHJKPYXCVBNML");
+  keyboard.makeKeysRow(100.0, 400.0, 9);
+  keyboard.makeKeysRow(140.0, 490.0, 8);
+  keyboard.makeKeysRow(60.0, 580.0, 9);
+
+
   
-  //blackground = loadImage("blackTexture.jpg");
   //for (int i = 0; i< letters.length; i++) {
   //  letters[i] = new Light(letterOrder.charAt(i), i);
   //}
@@ -31,15 +33,10 @@ void setup() {
 }
 
 void draw() {
-  background(20);
+  imageMode(CORNER);
+  image(background, 0, 0, width, height);
   
   keyboard.show();
-  
-  
-
-  //imageMode(CORNER);
-  //image(blackground,0,0, width,height);
-  //enigma.show();
 }
 
 void mousePressed() {
@@ -48,7 +45,7 @@ void mousePressed() {
 
 
 void keyPressed() {
-  
+
   //if (letterOrderLowerCase.indexOf(key) != -1 && !keyIsDown && !enigma.showPlugs) {
   //  char output = enigma.runMachine(key);
   //  if(output == '1'){
