@@ -1,6 +1,7 @@
 class Key {
 
   PVector position;
+  Circle circle;
   Letter letter;
   boolean pressed;
 
@@ -14,11 +15,21 @@ class Key {
     position.y = y_;
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+  void setCircle() {
+    circle = new Circle();
+    circle.setPosition(position.x, position.y);
+    circle.setRadius(80.0);
+    circle.setBorderThickness(5.0);
+    circle.setInsideColor(color(50));
+    circle.setBorderColor(color(255));
+  }
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
   void setLetter(char symbol) {
-    letter.setPosition(position.x, position.x - 5.0);
-    letter.setFont("MS-UIGothic-48");
+    letter = new Letter();
+    letter.setPosition(position.x, position.y);
+    letter.setFont("MS PGothic");
     letter.setSymbol(symbol);
-    letter.setSize(50.0);
+    letter.setSize(60.0);
     letter.setColor(color(255));
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
@@ -32,19 +43,10 @@ class Key {
     print("PRESSED !");
     print("\n");
     return pressed;
-    
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
   void show() {
-    strokeWeight(5);
-    stroke(255);
-    fill(50);
-    ellipseMode(CENTER);
-    ellipse(position.x, position.y, 80.0, 80.0);
-
-    fill(255);
-    textSize(50);
-    textAlign(CENTER, CENTER);
-    text(letter, position.x, position.y - 5.0);
+    circle.show();
+    letter.show();
   }
 }
