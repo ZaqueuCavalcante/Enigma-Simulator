@@ -4,7 +4,7 @@ class Keyboard {
   PVector distanceBetweenKeys;
 
   String letters;
-  ArrayList<Keycap> keycaps;
+  ArrayList<Key> keys;
 
   Keyboard() {
   }
@@ -24,42 +24,42 @@ class Keyboard {
     letters = "QWERTZUIOASDFGHJKPYXCVBNML";
   }
   void setKeycapsPositions() {
-    keycaps = new ArrayList<Keycap>();
+    keys = new ArrayList<Key>();
     float x;
     float y;
 
     for (int i = 0; i < 9; i++) {
-      Keycap keycap = new Keycap();
+      Key key_ = new Key();
       x = position.x + i*distanceBetweenKeys.x;
       y = position.y;
-      keycap.setPosition(x, y);
-      keycaps.add(keycap);
+      key_.setPosition(x, y);
+      keys.add(key_);
     }
     for (int i = 0; i < 8; i++) {
-      Keycap keycap = new Keycap();
+      Key key_ = new Key();
       x = position.x + distanceBetweenKeys.x/2 + i*distanceBetweenKeys.x;
       y = position.y + distanceBetweenKeys.y;
-      keycap.setPosition(x, y);
-      keycaps.add(keycap);
+      key_.setPosition(x, y);
+      keys.add(key_);
     }
     for (int i = 0; i < 9; i++) {
-      Keycap keycap = new Keycap();
+      Key key_ = new Key();
       x = position.x + i*distanceBetweenKeys.x;
       y = position.y + 2.0*distanceBetweenKeys.y;
-      keycap.setPosition(x, y);
-      keycaps.add(keycap);
+      key_.setPosition(x, y);
+      keys.add(key_);
     }
   }
   void setKeycapsLetters() {
     for (int i = 0; i < 26; i++) {
       char letter = letters.charAt(i);
-      keycaps.get(i).setLetter(letter);
+      keys.get(i).setLetter(letter);
     }
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
   void show() {
     for (int i = 0; i < 26; i++) {
-      keycaps.get(i).show();
+      keys.get(i).show();
     }
   }
 }
