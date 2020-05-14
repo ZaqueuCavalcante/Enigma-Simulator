@@ -3,6 +3,8 @@
 Keyboard keyboard;
 Lampboard lampboard;
 
+Plug plug;
+
 void setup() {
   size(1200, 900);
   frameRate(1);
@@ -22,6 +24,12 @@ void setup() {
   lampboard.makeLampsRow(140.0, 390.0, 8);
   lampboard.makeLampsRow(60.0, 480.0, 9);
   
+  plug = new Plug();
+  plug.setPosition(100.0, 100.0);
+  plug.setVerticalDistance(50.0);
+  plug.setLetter('Z');
+  plug.setSockets();
+  
   //enigma = new Enigma();
   //enigma.randomRotors();
   //enigma.randomPositions();
@@ -36,6 +44,8 @@ void draw() {
   
   keyboard.show();
   lampboard.show();
+  
+  plug.show();
 }
 
 void mousePressed() {
