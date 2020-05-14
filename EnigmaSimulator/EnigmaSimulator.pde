@@ -1,11 +1,4 @@
-//Light[] letters = new Light[26]; //<>// //<>// //<>// //<>// //<>//
-//String letterOrderLowerCase = "qwertyuiopasdfghjklzxcvbnm";
-//PImage lightOnSprite;
-//boolean keyIsDown = false;
-//char keyDown;
-//char keyLight;
-
-PImage background;
+//PImage background; //<>// //<>// //<>// //<>// //<>//
 
 Keyboard keyboard;
 Lampboard lampboard;
@@ -13,7 +6,7 @@ Lampboard lampboard;
 void setup() {
   size(1200, 900);
   frameRate(1);
-  background = loadImage("blackTexture.jpg");
+  //background = loadImage("blackTexture.jpg");
 
   keyboard = new Keyboard();
   keyboard.setDistanceBetweenKeys(120.0);
@@ -29,21 +22,15 @@ void setup() {
   lampboard.makeLampsRow(140.0, 390.0, 8);
   lampboard.makeLampsRow(60.0, 480.0, 9);
   
-  
-  
-  //for (int i = 0; i< letters.length; i++) {
-  //  letters[i] = new Light(letterOrder.charAt(i), i);
-  //}
-  //lightOnSprite = loadImage("light.png");
-
   //enigma = new Enigma();
   //enigma.randomRotors();
   //enigma.randomPositions();
 }
 
 void draw() {
-  imageMode(CORNER);
-  image(background, 0, 0, width, height);
+  background(20);
+  //imageMode(CORNER);
+  //image(background, 0, 0, width, height);
   
   lampboard.lamps.get(int(random(26))).turnOn();
   

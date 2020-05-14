@@ -19,8 +19,8 @@ class Lamp {
     circle = new Circle();
     circle.setPosition(position.x, position.y);
     circle.setRadius(50.0);
-    circle.setBorderThickness(1.0);
-    circle.setInsideColor(color(50));
+    circle.setBorderThickness(0.0);
+    circle.setInsideColor(color(0));
     circle.setBorderColor(color(255));
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
