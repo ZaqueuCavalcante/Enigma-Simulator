@@ -13,3 +13,5 @@ NumberPhile: https://www.youtube.com/watch?v=G2_Q9FoD-oQ
 Site iterativo: http://enigmaco.de/enigma/enigma.html
 
 Vídeo explicativo: https://www.youtube.com/watch?v=VnsTHAH5yAE
+
+<img src='EnigmaSimulator/data/firstScreenShot.png' width='500'>
