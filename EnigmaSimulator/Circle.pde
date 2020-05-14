@@ -26,6 +26,7 @@ class Circle {
   void setBorderColor(color borderColor_) {
     borderColor = borderColor_;
   }
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
   void show() {
     strokeWeight(borderThickness);
     stroke(borderColor);

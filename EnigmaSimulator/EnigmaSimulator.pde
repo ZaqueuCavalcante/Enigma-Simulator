@@ -1,4 +1,4 @@
-//PImage background; //<>// //<>// //<>// //<>// //<>//
+//PImage background;  //<>//
 
 Keyboard keyboard;
 Lampboard lampboard;
