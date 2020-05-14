@@ -9,7 +9,7 @@ class Lampboard {
     lamps = new ArrayList<Lamp>();
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
-  void setDistanceBetweenKeys(float distanceBetweenLamps_) {
+  void setDistanceBetweenLamps(float distanceBetweenLamps_) {
     distanceBetweenLamps = distanceBetweenLamps_;
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //

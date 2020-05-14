@@ -50,6 +50,6 @@ class Lamp {
     }
     circle.show();
     letter.show();
-    turnOff();
+    //turnOff();
   }
 }
