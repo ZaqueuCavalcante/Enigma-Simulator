@@ -4,7 +4,11 @@
 
 Como a máquina funciona ?
 
-NumberPhile -> https://www.youtube.com/watch?v=G2_Q9FoD-oQ
+Wikipedia: https://en.wikipedia.org/wiki/Enigma_machine
+
+HACKADAY: https://hackaday.com/2017/08/22/the-enigma-enigma-how-the-enigma-machine-worked/
+
+NumberPhile: https://www.youtube.com/watch?v=G2_Q9FoD-oQ
 
 Site iterativo: http://enigmaco.de/enigma/enigma.html
 
