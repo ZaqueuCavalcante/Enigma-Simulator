@@ -1,12 +1,35 @@
 class Lamp {
 
   PVector position;
-
-  char letter;
-
+  Circle circle;
+  Letter letter;
   boolean on;
 
   Lamp() {
+    turnOff();
+  }
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+  void setPosition(float x, float y) {
+    position = new PVector();
+    position.x = x;
+    position.y = y;
+  }
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+  void setCircle() {
+    circle = new Circle();
+    circle.setPosition(position.x, position.y);
+    circle.setRadius(50.0);
+    circle.setBorderThickness(1.0);
+    circle.setInsideColor(color(50));
+    circle.setBorderColor(color(255));
+  }
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+  void setLetter(char symbol) {
+    letter = new Letter();
+    letter.setPosition(position.x, position.y);
+    letter.setFont("Arial Black");
+    letter.setSymbol(symbol);
+    letter.setSize(30.0);
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
   void turnOn() {
@@ -21,17 +44,12 @@ class Lamp {
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
   void show() {
     if (isOn()) {
-      imageMode(CENTER);
-      //image(lightOnSprite, position.x, position.y);
-      fill(200, 100, 0);
+      letter.setColor(color(255, 255, 0));
     } else {
-      strokeWeight(5);
-      fill(150);
-      ellipse(position.x, position.y, 80, 80);
-      fill(50);
+      letter.setColor(color(255));
     }
-    textAlign(CENTER, CENTER);
-    textSize(20);
-    text(letter, position.x, position.y);
+    circle.show();
+    letter.show();
+    turnOff();
   }
 }
