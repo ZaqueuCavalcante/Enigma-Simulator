@@ -1,90 +1,39 @@
-//class PlugBoard {
-//  Plug[] plugs = new Plug[10];
-//  PlugPoint[] plugPoints = new PlugPoint[26];
-//  boolean showing = false;
-//  boolean movingPlug = false;
-//  int movingPlugNo =0;
+class Plugboard {
 
-//  PlugBoard() {
-//    for (int i = 0; i< plugPoints.length; i++) {
-//      plugPoints[i] = new PlugPoint(i);
-//    }
-//    randomisePlugs();
-//  }
+  float distanceBetweenPlugs;
 
+  String lettersList;
+  ArrayList<Plug> plugs;
 
-//  void randomisePlugs() {
-//    ArrayList<Integer> chosen = new  ArrayList<Integer>();
-//    for (int i = 0; i< 10; i++) {
-//      int rand1 = floor(random(26));
-//      while (chosen.contains(rand1)) {
-//        rand1 = floor(random(26));
-//      }
-//      chosen.add(rand1);
-//      int rand2 = floor(random(26));
-//      while (chosen.contains(rand2)) {
-//        rand2 = floor(random(26));
-//      }
-//      chosen.add(rand2);
-//      plugs[i] = new Plug(rand1, rand2, plugPoints[rand1], plugPoints[rand2] );
-//      plugPoints[rand1].occupied = true;
-//      plugPoints[rand2].occupied = true;
-//    }
-//  }
-
-//  void show() {
-//    for (int i = 0; i< 26; i++) {
-//      plugPoints[i].show();
-//    }
-
-//    for (int i= 0; i< plugs.length; i++) {
-//      plugs[i].showPlugs();
-//    }
-
-//    for (int i= 0; i< plugs.length; i++) {
-//      plugs[i].showLines();
-//    }
-//  }
-
-//  int runThrough(int input) {
-//    for (int  i = 0; i< plugs.length; i++) {
-//      if (plugs[i].connection1 == input) {
-//        return plugs[i].connection2;
-//      } else if (plugs[i].connection2 == input) {
-//        return plugs[i].connection1;
-//      }
-//    }
-
-//    return input;//if no plugs on that letter then just return the input
-//  }
-
-
-
-//  void click(int x, int y) {
-//    if (!movingPlug) {
-//      for (int i = 0; i< plugs.length; i++) {
-//        if (plugs[i].click(x, y)) {
-//          movingPlug = true;
-//          movingPlugNo = i;
-//          return;
-//        }
-//      }
-//    } else {
-//      for (int i = 0; i< plugPoints.length; i++) {
-//        if (plugPoints[i].click(x, y)) {
-//          if (!plugPoints[i].occupied) {
-//            movingPlug = false;
-//            if (plugs[movingPlugNo].move1) {
-//              plugs[movingPlugNo].setPlugPoint(i, plugPoints[i], 1);
-//              plugs[movingPlugNo].move1 = false;
-//            } else {
-//              plugs[movingPlugNo].setPlugPoint(i, plugPoints[i], 2);
-//              plugs[movingPlugNo].move2 = false;
-//            }
-//          }
-//          return;
-//        }
-//      }
-//    }
-//  }
-//}
+  Plugboard() {
+    plugs = new ArrayList<Plug>();
+  }
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+  void setDistanceBetweenPlugs(float distanceBetweenPlugs_) {
+    distanceBetweenPlugs = distanceBetweenPlugs_;
+  }
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+  void setLettersList(String lettersList_) {
+    lettersList = lettersList_;
+  }
+  void makePlugsRow(float firstPlugX, float firstPlugY, int plugsNumber) {
+    int lastPlugIndex;
+    char lastPlugLetter;
+    for (int i = 0; i < plugsNumber; i++) {
+      Plug newPlug = new Plug();
+      newPlug.setPosition(firstPlugX + i*distanceBetweenPlugs, firstPlugY);
+      plugs.add(newPlug);
+      lastPlugIndex = plugs.size() - 1;
+      lastPlugLetter = lettersList.charAt(lastPlugIndex);
+      plugs.get(lastPlugIndex).setVerticalDistance(50.0);
+      plugs.get(lastPlugIndex).setLetter(lastPlugLetter);
+      plugs.get(lastPlugIndex).setSockets();
+    }
+  }
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+  void show() {
+    for (int i = 0; i < plugs.size(); i++) {
+      plugs.get(i).show();
+    }
+  }
+}
