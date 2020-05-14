@@ -26,8 +26,8 @@ class Key {
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
   void setLetter(char symbol) {
     letter = new Letter();
-    letter.setPosition(position.x, position.y);
-    letter.setFont("MS PGothic");
+    letter.setPosition(position.x, position.y + 3.0);
+    letter.setFont("Arial");
     letter.setSymbol(symbol);
     letter.setSize(30.0);
     letter.setColor(color(255));
