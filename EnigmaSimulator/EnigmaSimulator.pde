@@ -3,7 +3,7 @@
 Keyboard keyboard;
 Lampboard lampboard;
 
-Plug plug;
+Plugboard plugboard;
 
 void setup() {
   size(1200, 900);
@@ -18,17 +18,18 @@ void setup() {
   keyboard.makeKeysRow(60.0, 830.0, 9);
 
   lampboard = new Lampboard();
-  lampboard.setDistanceBetweenKeys(120.0);
+  lampboard.setDistanceBetweenLamps(120.0);
   lampboard.setLettersList("QWERTZUIOASDFGHJKPYXCVBNML");
-  lampboard.makeLampsRow(100.0, 300.0, 9);
-  lampboard.makeLampsRow(140.0, 390.0, 8);
-  lampboard.makeLampsRow(60.0, 480.0, 9);
+  lampboard.makeLampsRow(100.0, 380.0, 9);
+  lampboard.makeLampsRow(140.0, 470.0, 8);
+  lampboard.makeLampsRow(60.0, 560.0, 9);
   
-  plug = new Plug();
-  plug.setPosition(100.0, 100.0);
-  plug.setVerticalDistance(50.0);
-  plug.setLetter('Z');
-  plug.setSockets();
+  plugboard = new Plugboard();
+  plugboard.setDistanceBetweenPlugs(120.0);
+  plugboard.setLettersList("QWERTZUIOASDFGHJKPYXCVBNML");
+  plugboard.makePlugsRow(100.0, 20.0, 9);
+  plugboard.makePlugsRow(160.0, 120.0, 8);
+  plugboard.makePlugsRow(100.0, 220.0, 9);
   
   //enigma = new Enigma();
   //enigma.randomRotors();
@@ -45,7 +46,7 @@ void draw() {
   keyboard.show();
   lampboard.show();
   
-  plug.show();
+  plugboard.show();
 }
 
 void mousePressed() {
