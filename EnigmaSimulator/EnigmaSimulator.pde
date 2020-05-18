@@ -1,4 +1,6 @@
-//PImage background;  //<>//
+//Colocar campos para mostrar a mensagem digitada e a encriptada. //<>//
+
+//PImage background; 
 
 Keyboard keyboard;
 Lampboard lampboard;
@@ -25,11 +27,11 @@ void setup() {
   lampboard.makeLampsRow(60.0, 560.0, 9);
   
   plugboard = new Plugboard();
-  plugboard.setDistanceBetweenPlugs(120.0);
+  plugboard.setDistanceBetweenSlots(120.0);
   plugboard.setLettersList("QWERTZUIOASDFGHJKPYXCVBNML");
-  plugboard.makePlugsRow(100.0, 20.0, 9);
-  plugboard.makePlugsRow(160.0, 120.0, 8);
-  plugboard.makePlugsRow(100.0, 220.0, 9);
+  plugboard.makeSlotsRow(100.0, 20.0, 9);
+  plugboard.makeSlotsRow(160.0, 120.0, 8);
+  plugboard.makeSlotsRow(100.0, 220.0, 9);
   
   //enigma = new Enigma();
   //enigma.randomRotors();

@@ -1,39 +1,41 @@
 class Plugboard {
 
-  float distanceBetweenPlugs;
+  float distanceBetweenSlots;
 
   String lettersList;
+  ArrayList<Slot> slots;
   ArrayList<Plug> plugs;
 
   Plugboard() {
+    slots = new ArrayList<Slot>();
     plugs = new ArrayList<Plug>();
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
-  void setDistanceBetweenPlugs(float distanceBetweenPlugs_) {
-    distanceBetweenPlugs = distanceBetweenPlugs_;
+  void setDistanceBetweenSlots(float distanceBetweenSlots_) {
+    distanceBetweenSlots = distanceBetweenSlots_;
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
   void setLettersList(String lettersList_) {
     lettersList = lettersList_;
   }
-  void makePlugsRow(float firstPlugX, float firstPlugY, int plugsNumber) {
-    int lastPlugIndex;
-    char lastPlugLetter;
-    for (int i = 0; i < plugsNumber; i++) {
-      Plug newPlug = new Plug();
-      newPlug.setPosition(firstPlugX + i*distanceBetweenPlugs, firstPlugY);
-      plugs.add(newPlug);
-      lastPlugIndex = plugs.size() - 1;
-      lastPlugLetter = lettersList.charAt(lastPlugIndex);
-      plugs.get(lastPlugIndex).setVerticalDistance(50.0);
-      plugs.get(lastPlugIndex).setLetter(lastPlugLetter);
-      plugs.get(lastPlugIndex).setSockets();
+  void makeSlotsRow(float firstSlotX, float firstSlotY, int slotsNumber) {
+    int lastSlotIndex;
+    char lastSlotLetter;
+    for (int i = 0; i < slotsNumber; i++) {
+      Slot newSlot = new Slot();
+      newSlot.setPosition(firstSlotX + i*distanceBetweenSlots, firstSlotY);
+      slots.add(newSlot);
+      lastSlotIndex = slots.size() - 1;
+      lastSlotLetter = lettersList.charAt(lastSlotIndex);
+      slots.get(lastSlotIndex).setVerticalDistance(50.0);
+      slots.get(lastSlotIndex).setLetter(lastSlotLetter);
+      slots.get(lastSlotIndex).setSockets();
     }
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
   void show() {
-    for (int i = 0; i < plugs.size(); i++) {
-      plugs.get(i).show();
+    for (int i = 0; i < slots.size(); i++) {
+      slots.get(i).show();
     }
   }
 }

@@ -5,7 +5,6 @@ class Enigma {
   Keyboard keyboard;
   Plugboard plugboard;
 
-
   Enigma() {
     rotors = new ArrayList<Rotor>();
     lampboard = new Lampboard();
