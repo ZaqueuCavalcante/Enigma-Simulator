@@ -23,20 +23,20 @@ class Slot {
     letter.setPosition(position.x, position.y);
     letter.setFont("Arial");
     letter.setSymbol(symbol);
-    letter.setSize(30.0);
+    letter.setSize(20.0);
     letter.setColor(color(255));
   }
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
   void setSockets() {
     Circle socket0 = new Circle();
     socket0.setPosition(position.x, position.y + verticalDistance);
-    socket0.setRadius(30.0);
+    socket0.setRadius(20.0);
     socket0.setBorderThickness(5.0);
     socket0.setInsideColor(color(0));
     socket0.setBorderColor(color(255));
     Circle socket1 = new Circle();
     socket1.setPosition(position.x, position.y + 2*verticalDistance);
-    socket1.setRadius(30.0);
+    socket1.setRadius(20.0);
     socket1.setBorderThickness(5.0);
     socket1.setInsideColor(color(0));
     socket1.setBorderColor(color(255));

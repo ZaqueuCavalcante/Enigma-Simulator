@@ -16,4 +16,4 @@ Universal Enigma: https://summersidemakerspace.ca/projects/enigma-machine/
 
 Vídeo explicativo: https://www.youtube.com/watch?v=VnsTHAH5yAE
 
-<img src='EnigmaSimulator/data/firstScreenShot.png' width='500'>
+<img src='EnigmaSimulator/data/secondScreenShot.png' width='500'>

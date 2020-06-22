@@ -27,7 +27,7 @@ class Plugboard {
       slots.add(newSlot);
       lastSlotIndex = slots.size() - 1;
       lastSlotLetter = lettersList.charAt(lastSlotIndex);
-      slots.get(lastSlotIndex).setVerticalDistance(50.0);
+      slots.get(lastSlotIndex).setVerticalDistance(35.0);
       slots.get(lastSlotIndex).setLetter(lastSlotLetter);
       slots.get(lastSlotIndex).setSockets();
     }

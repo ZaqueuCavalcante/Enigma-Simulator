@@ -1,6 +1,6 @@
-class Circle {
+public class Circle {
 
-  PVector position;
+  private PVector position;
   float radius;
   float borderThickness;
   color insideColor;

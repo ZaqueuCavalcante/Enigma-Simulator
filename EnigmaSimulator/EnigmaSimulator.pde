@@ -8,30 +8,30 @@ Lampboard lampboard;
 Plugboard plugboard;
 
 void setup() {
-  size(1200, 900);
+  size(1850, 1050);
   frameRate(1);
   //background = loadImage("blackTexture.jpg");
+  
+  lampboard = new Lampboard();
+  lampboard.setDistanceBetweenLamps(120.0);
+  lampboard.setLettersList("QWERTZUIOASDFGHJKPYXCVBNML");
+  lampboard.makeLampsRow(100.0, 300.0, 9);//100.0, 380.0, 9);
+  lampboard.makeLampsRow(160.0, 370.0, 8);//140.0, 470.0, 8);
+  lampboard.makeLampsRow(100.0, 440.0, 9);//60.0, 560.0, 9);
 
   keyboard = new Keyboard();
   keyboard.setDistanceBetweenKeys(120.0);
   keyboard.setLettersList("QWERTZUIOASDFGHJKPYXCVBNML");
-  keyboard.makeKeysRow(100.0, 650.0, 9);
-  keyboard.makeKeysRow(140.0, 740.0, 8);
-  keyboard.makeKeysRow(60.0, 830.0, 9);
+  keyboard.makeKeysRow(100.0, 550.0, 9);
+  keyboard.makeKeysRow(160.0, 620.0, 8);
+  keyboard.makeKeysRow(100.0, 690.0, 9);
 
-  lampboard = new Lampboard();
-  lampboard.setDistanceBetweenLamps(120.0);
-  lampboard.setLettersList("QWERTZUIOASDFGHJKPYXCVBNML");
-  lampboard.makeLampsRow(100.0, 380.0, 9);
-  lampboard.makeLampsRow(140.0, 470.0, 8);
-  lampboard.makeLampsRow(60.0, 560.0, 9);
-  
   plugboard = new Plugboard();
   plugboard.setDistanceBetweenSlots(120.0);
   plugboard.setLettersList("QWERTZUIOASDFGHJKPYXCVBNML");
-  plugboard.makeSlotsRow(100.0, 20.0, 9);
-  plugboard.makeSlotsRow(160.0, 120.0, 8);
-  plugboard.makeSlotsRow(100.0, 220.0, 9);
+  plugboard.makeSlotsRow(100.0, 780.0, 9);
+  plugboard.makeSlotsRow(160.0, 860.0, 8);
+  plugboard.makeSlotsRow(100.0, 940.0, 9);
   
   //enigma = new Enigma();
   //enigma.randomRotors();
@@ -40,15 +40,22 @@ void setup() {
 
 void draw() {
   background(20);
+  noFill();
+  stroke(255);
+  strokeWeight(2);
+  rect(60, 260, 1040, 230, 20);
+  rect(60, 500, 1040, 240, 20);
+  rect(60, 750, 1040, 290, 20);
   //imageMode(CORNER);
   //image(background, 0, 0, width, height);
   
   lampboard.lamps.get(int(random(26))).turnOn();
   
-  keyboard.show();
+
   lampboard.show();
-  
+  keyboard.show();
   plugboard.show();
+  
 }
 
 void mousePressed() {
