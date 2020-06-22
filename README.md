@@ -1,5 +1,10 @@
 # Enigma Simulator
 
+Repos:
+  - https://github.com/miandoli/enigma-simulator
+  - https://github.com/lubeskih/enigma-emulator
+  - https://github.com/NationalSecurityAgency/enigma-simulator
+
 :key: Simula a versão militar da máquina, utilizada na Segunda Guerra Mundial.
 
 Como a máquina funciona ?
